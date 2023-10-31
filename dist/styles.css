@@ -1,0 +1,98 @@
+html, body {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    height: 3em;
+    background: linear-gradient(rgba(253, 105, 6, 0.8), rgb(248, 113, 50) 99.71%)
+    }
+
+#content {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;  
+    gap: 2rem;
+    padding: 2.7rem;
+    box-sizing: border-box;
+}
+
+.form-list-container {
+    grid-column: 2 / 4;
+    grid-row: 2 / 6;
+}
+
+form {
+    display: flex;
+    height: 1.6rem;
+}
+
+.todo-list {
+    display: flex;
+    width: 27.8vw;
+    border: solid 2px rgba(255, 217, 0, 0.692);
+    padding: .5rem;
+    border-radius: 1.75rem;
+    height: 1.7rem;
+}
+
+
+
+.list-left {
+    width: 87%;
+
+}
+
+.DueDatePriorityContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .8rem;
+}
+
+.projects-container {
+    display: flex;
+    grid-column: 1;
+    grid-row: 2 / 6;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: rgba(255, 174, 0, 0.281); 
+    border-radius: 2rem;
+    overflow: auto;
+}
+
+.home-btn {
+    height: 4rem;
+    width: 100%;
+    background: transparent;
+    border: transparent ;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    font-family: Roboto;
+    color: rgb(53, 53, 53);
+    border-bottom: solid .3rem black;
+    box-sizing: border-box;
+}
+
+.home-btn:hover {
+    background: rgba(243, 69, 0, 0.596);
+}
+
+.submit-btn{
+    width: 4.3rem;
+}
+
+.projects-list {
+    display: flex;
+    width: 11vw;
+    border: solid 4px rgba(252, 52, 52, 0.479);
+    padding: .5rem;
+    border-radius: 1.75rem;
+    height: 1.7rem;
+}
+
+.home-form-class {
+    padding-left: 1rem;
+    box-sizing: border-box;
+}

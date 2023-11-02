@@ -55,7 +55,7 @@ form {
     grid-column: 1;
     grid-row: 2 / 6;
     flex-direction: column;
-    gap: 2rem;
+    gap: .5rem;
     background-color: rgba(255, 174, 0, 0.281); 
     border-radius: 2rem;
     overflow: auto;
@@ -86,7 +86,6 @@ form {
 .projects-list {
     display: flex;
     width: 11vw;
-    border: solid 4px rgba(252, 52, 52, 0.479);
     padding: .5rem;
     border-radius: 1.75rem;
     height: 1.7rem;
@@ -95,4 +94,19 @@ form {
 .home-form-class {
     padding-left: 1rem;
     box-sizing: border-box;
+}
+
+.clear-btn {
+    height: 4rem;
+    width: 8rem;
+    border-radius: 5rem;
+    font-size: 1.5rem;
+    /* background-color: antiquewhite;
+    border: solid 2px rgb(255, 99, 99) */
+}
+
+.entered-project {
+    width: 100%;
+    border-radius: 1rem;
+    background-color: rgb(255, 82, 82);
 }

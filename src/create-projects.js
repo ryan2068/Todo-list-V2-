@@ -41,7 +41,8 @@ const addAProject = () => {
         
         const project = new projectsFactory(projectInput)
         
-        const enteredProject = document.createElement("div")
+        const enteredProject = document.createElement("button")
+        enteredProject.classList.add("entered-project")
         enteredProject.textContent = project.name
 
 

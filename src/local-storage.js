@@ -2,20 +2,22 @@ import { createTask } from "./create-task"
 
 
 const clearBtn = () => {
-    const contentDiv = document.querySelector("#content")
     const clearButton = document.createElement("button")
-    formListContainer = document.querySelector(".form-list-container")
+    clearButton.classList.add("clear-btn")
+    clearButton.textContent = "Clear"
+    const formListContainer = document.querySelector(".form-list-container")
     clearButton.addEventListener("click", () => {
         localStorage.clear()
+        location.reload()
     })
-    formListContainer.appendChild()
+    formListContainer.appendChild(clearButton)
 
 }
 
 
 const getLocalStorageTasks = () => {
     
-    const storedTasks = JSON.parse(localStorage.getItem("task"))
+    const storedTasks = JSON.parse(localStorage.getItem("task")) || []
     for (let i = 0; i < storedTasks.length; i++) {
         const contentDiv = document.querySelector("#content")
         const formListContainer = document.querySelector(".form-list-container")
@@ -31,30 +33,31 @@ const getLocalStorageTasks = () => {
         const taskDueDate = document.createElement("div")
         const taskPriority = document.createElement("input")
         const importantSpan = document.createElement("span")
+        const DueDatePriorityContainer = document.createElement("div")
         
         taskTitle.textContent = oldTask.title
         taskDescription.textContent = oldTask.description
         taskDueDate.textContent = oldTask.dueDate
-
         importantSpan.innerHTML = "<em>important?</em>"
         taskPriority.setAttribute("id", "priority")
         taskPriority.setAttribute("type", "checkbox")
         taskPriority.classList.add("important-checkbox")
-
-
         listLeft.classList.add("list-left")
         li.classList.add("todo-list")
+        DueDatePriorityContainer.classList.add("DueDatePriorityContainer")
 
         listLeft.appendChild(taskTitle)
         listLeft.appendChild(taskDescription)
+        DueDatePriorityContainer.appendChild(taskDueDate)
+        DueDatePriorityContainer.appendChild(importantSpan)
+        DueDatePriorityContainer.appendChild(taskPriority)
         li.appendChild(listLeft)
+        li.appendChild(DueDatePriorityContainer)
 
         ul.appendChild(li)
         formListContainer.appendChild(ul)
         contentDiv.appendChild(formListContainer)
-        
-        
-        
+          
 
     }
 }

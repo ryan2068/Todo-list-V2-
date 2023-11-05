@@ -31,6 +31,8 @@ const addProjectDOM = function () {
     contentDiv.appendChild(projectsContainer)
 } 
 
+const projectsArray = JSON.parse(localStorage.getItem('project')) || []
+
 const addAProject = () => {
     const submitBtn = document.querySelector(".submit-btn")
     submitBtn.addEventListener("click", (e) => {
@@ -51,6 +53,9 @@ const addAProject = () => {
         ul.appendChild(li)
 
         projectsContainer.appendChild(ul)
+        projectsArray.push(project)
+        localStorage.setItem("project", JSON.stringify(projectsArray))
+
         
 
 

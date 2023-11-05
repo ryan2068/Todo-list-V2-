@@ -1,10 +1,11 @@
 
-const createTask = function(title, description, dueDate, priority) {
+const createTask = function(title, description, dueDate, priority, items) {
     this.title = title
     this.description = description
     this.dueDate = dueDate
     this.priority = priority
-    return { title, description, dueDate, priority }
+    items = []
+    return { title, description, dueDate, priority, items }
 }
 
 

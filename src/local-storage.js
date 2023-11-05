@@ -1,4 +1,4 @@
-import { createTask } from "./create-task"
+import { createTask, projectsFactory } from "./create-task"
 
 
 const clearBtn = () => {
@@ -63,6 +63,36 @@ const getLocalStorageTasks = () => {
 }
 
 
+const getLocalStorageProjects = () => {
+    
+    const storedTasks = JSON.parse(localStorage.getItem("project")) || []
+    for (let i = 0; i < storedTasks.length; i++) {
+        const contentDiv = document.querySelector("#content")
+        const projectsContainer = document.querySelector(".projects-container")
+        const taskTitle = document.createElement("button")
+        
+        const oldTask = new projectsFactory(storedTasks[i].name)
+        
+        //creating divs to append task to.
+        const ul = document.createElement("ul");
+        const li = document.createElement("li");
+        li.classList.add("projects-list")
+        
+        taskTitle.textContent = oldTask.name
+        taskTitle.classList.add("entered-project")
+        
+        
+        li.appendChild(taskTitle)
+        ul.appendChild(li)
+        projectsContainer.appendChild(ul)
+        contentDiv.appendChild(projectsContainer)
+        console.log(oldTask)
+          
+
+    }
+}
 
 
-export { getLocalStorageTasks, clearBtn }
+
+
+export { getLocalStorageTasks, getLocalStorageProjects ,clearBtn }

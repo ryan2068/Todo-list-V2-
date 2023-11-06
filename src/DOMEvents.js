@@ -46,8 +46,7 @@ const addATask = (title, description, dueDate, priority) => {
         const description = document.querySelector("#description").value
         const dueDate = document.querySelector("#dueDate").value
         const priority = document.querySelector("#priority")
-        const items = []
-        const task = new createTask (title, description, dueDate, priority, items)  
+        const task = new createTask (title, description, dueDate, priority)  
 
         const ul = document.createElement("ul");
         const li = document.createElement("li");
@@ -90,8 +89,7 @@ const addATask = (title, description, dueDate, priority) => {
 
         //add task to local-storage 
         tasksArray.push(task)
-        items.push(tasksArray)
-        localStorage.setItem("task", JSON.stringify(items))  
+        localStorage.setItem("task", JSON.stringify(tasksArray))  
         
     })
     

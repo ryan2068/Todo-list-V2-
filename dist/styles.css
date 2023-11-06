@@ -80,7 +80,7 @@ form {
 }
 
 .submit-btn{
-    width: 4.3rem;
+    width: 6vw;
 }
 
 .projects-list {
@@ -109,4 +109,9 @@ form {
     width: 100%;
     border-radius: 1rem;
     background-color: rgb(255, 82, 82);
+}
+
+.project-input {
+    height: 2vh;
+    width: 10vw;
 }
